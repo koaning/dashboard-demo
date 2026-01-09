@@ -150,7 +150,7 @@ def create_pypi_chart(
 def _(Data):
     def load_pypi_data(fit_window: int | None = None) -> Data:
         df_pypi = (
-            read_ndjson_file("pypi.jsonl")
+            read_ndjson_file("https://raw.githubusercontent.com/koaning/dashboard-demo/refs/heads/main/pypi.jsonl")
             .rename(mapping={"last_day": "pypi"})
             .with_columns(
                 pl.col("date").str.to_date(),
